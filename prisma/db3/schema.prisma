@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../node_modules/@prisma/client-db3"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:5432/ethereumCloudWalletDB3?schema=public"
+}
+
+model KeyShare3 {
+  id       Int    @id @default(autoincrement())
+  userId   Int
+  walletId Int?
+  share    String
+}
